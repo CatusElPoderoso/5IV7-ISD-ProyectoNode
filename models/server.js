@@ -2,7 +2,6 @@
 const express = require('express');
 const connection = require('../database/config');
 class Server{
-    // constructor
     constructor(){
         this.app = express();
         this.puerto = process.env.PORT;
