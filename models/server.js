@@ -1,4 +1,3 @@
-
 // imports
 const express = require( 'express' );
 const connection = require( '../database/config' );
@@ -19,7 +18,6 @@ class Server {
         await connection();
     };
 
-
     // public
     middlewares() {
         this.app.use( express.static( 'public' ) );
@@ -39,7 +37,6 @@ class Server {
         });
     };
 };
-
 
 // exports
 module.exports = Server;
