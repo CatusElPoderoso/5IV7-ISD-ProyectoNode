@@ -1,8 +1,9 @@
+
 // imports
 const express = require( 'express' );
 const connection = require( '../database/config' );
 
-// Server
+// Servidor
 class Server {
     // constructor
     constructor() {
@@ -13,31 +14,28 @@ class Server {
         this.routes();
     };
 
-    // dbConnection
+    // conección bd
     async dbConnection() {
         await connection();
     };
 
 
-    // middlewares
+    // public
     middlewares() {
         this.app.use( express.static( 'public' ) );
     };
 
-
-    // routes
+    // ruta /
     routes() {
-        // this.app.use( require( '../routes' ) );
         this.app.get( '/', ( req, res ) => {
-            res.sendFile( 'index' );
+            res.sendFile(__dirname + '/00-index.html');
         });
     };
 
-
-    // listen
+    // puerto al index
     listen() {
         this.app.listen( this.puerto, () => {
-            console.log( `Escuchando en el puerto ${ this.puerto }` );
+            console.log(`Link a la página... http://localhost:${this.puerto}/00-index.html`);
         });
     };
 };
