@@ -1,3 +1,4 @@
+
 // imports
 const mongoose = require( 'mongoose' );
 
@@ -10,7 +11,6 @@ const connection = async() => {
         throw new Error( `Error de conexion de la base de datos: \n${ err }` );
     };
 };
-
 
 // exports
 module.exports = connection;
