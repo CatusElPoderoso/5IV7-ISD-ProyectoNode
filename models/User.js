@@ -1,6 +1,6 @@
 
 // imports
-const { Schema, model } = require( 'mongoose' );
+const {Schema, model} = require('mongoose');
 
 
 // SchemaUser
@@ -10,15 +10,15 @@ const SchemaUser = Schema({
         type: String,
         required: true,
         unique: true
-    },
+   },
 
     password: {
         type: String,
         required: true
-    }
+   }
 
-}, { timestamps: true } );
+}, {timestamps: true});
 
 
 // exports
-module.exports = model( 'User', SchemaUser );
+module.exports = model('User', SchemaUser);

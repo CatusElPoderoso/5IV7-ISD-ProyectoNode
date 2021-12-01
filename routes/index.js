@@ -1,8 +1,8 @@
 
 // imports
-const { Router } = require( 'express' );
-const { getHome,
-        getOther } = require( '../controllers/index' );
+const {Router} = require('express');
+const {getHome,
+        getOther} = require('../controllers/index');
 
 
 // router
@@ -10,11 +10,11 @@ const router = Router();
 
 
 // get /home
-router.get( '/home', getHome );
+router.get('/home', getHome);
 
 
 // get /*
-router.get( '/*', getOther );
+router.get('/*', getOther);
 
 
 // exports

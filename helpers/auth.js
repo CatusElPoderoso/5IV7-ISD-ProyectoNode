@@ -1,14 +1,14 @@
 
 // imports
-const { request, response } = require(  'express' );
+const {request, response} = require( 'express');
 
 
 // auth
-const auth = ( req = request, res = response, next ) => {
+const auth = (req = request, res = response, next) => {
 
-    if ( req.isAuthenticated() ) return next();
-    req.flash( 'error', 'Hyeee rancio necesitas iniciar sesion primero' )
-    res.redirect( '/login' );
+    if (req.isAuthenticated()) return next();
+    req.flash('error', 'Hyeee rancio necesitas iniciar sesion primero')
+    res.redirect('/login');
 
 };
 
