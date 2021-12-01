@@ -1,4 +1,3 @@
-
 // improts
 const express = require('express');
 const path = require('path');
@@ -10,35 +9,26 @@ require('../config/passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 
-
 // Server
 class Server {
-
-
     // constructor
     constructor() {
-
         this.app = express();
         this.puerto = process.env.PORT;
         this.dbConnection();
         this.settings();
         this.middlewares();
         this.routes();
-
    };
-
 
     // dbConnection
     async dbConnection() {
-
         await connection();
-
    };
 
 
     // settings
     settings() {
-
         this.views = process.env.VIEWS;
         this.app.set('views', this.views);
         this.app.engine('hbs', exphbs({
@@ -53,7 +43,6 @@ class Server {
 
     // middlewares
     middlewares() {
-
         this.app.use(express.static('public'));
         this.app.use(express.urlencoded({extended: true}));
         this.app.use(methodOverride('_method'));
@@ -71,32 +60,24 @@ class Server {
             res.locals.user = req.user || null;
             next();
        });
-
    };
 
 
     // routes
     routes() {
-
         this.app.use(require('../routes/notes'));
         this.app.use(require('../routes/user'));
         this.app.use(require('../routes/index'));
-
    };
 
 
     // listen
     listen() {
-
         this.app.listen(this.puerto, () => {
-            console.log(`Escuchando en el puerto ${this.puerto}`);
+            console.log(`Página hospedada en http://localhost:${this.puerto}`);
        });
-
    };
-
-
 };
-
 
 // exports
 module.exports = Server;
