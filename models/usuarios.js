@@ -1,15 +1,19 @@
-
 // imports
 const {Schema, model} = require('mongoose');
 
-// SchemaUser
+/** 
+ * Este es el controlador que guarda los datos que debe ingresar 
+ * el usuario para poder agregar, editar y borrar las tareas que 
+ * se manejan dentro de la base de datos
+ */
+
 const SchemaUser = Schema({
-    email: {
+    email: { // para correo
         type: String,
         required: true,
         unique: true
    },
-    password: {
+    password: { // para contraseña
         type: String,
         required: true
    }
