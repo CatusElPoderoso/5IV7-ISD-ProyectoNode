@@ -1,10 +1,8 @@
-
 // imports
 const {request, response} = require('express');
-const User = require('../models/User');
+const User = require('../models/usuarios');
 const bcryptjs = require('bcryptjs');
 const passport = require('passport');
-
 
 // getLogin
 const getLogin = (req = request, res = response) => {
@@ -83,7 +81,7 @@ const postRegister = async(req = request, res = response) => {
 const getLogout = (req = request, res = response) => {
 
     req.logout();
-    req.flash('succes_msg', 'Sesion cerrada con existo');
+    req.flash('success_msg', 'Sesion cerrada con existo');
     res.redirect('/login');
 
 };
