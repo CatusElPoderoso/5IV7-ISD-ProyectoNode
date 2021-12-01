@@ -1,13 +1,13 @@
 // imports
-const path = require('path');
 const express = require('express');
+const path = require('path');
+const connection = require('../database/config');
+const exphbs = require('express-handlebars');
+const methodOverride = require('method-override');
+const passport = require('passport');
 require('../config/passport');
 const flash = require('connect-flash');
 const session = require('express-session');
-const connection = require('../database/config');
-const methodOverride = require('method-override');
-const exphbs = require('express-handlebars');
-const passport = require('passport');
 
 // Server
 class Server {
@@ -23,9 +23,9 @@ class Server {
         this.app = express();
         this.puerto = process.env.PORT;
         this.dbConnection();
-        this.routes();
-        this.middlewares();
         this.settings();
+        this.middlewares();
+        this.routes();
     };
     // conexión a la base de datos
     async dbConnection() {

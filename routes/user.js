@@ -1,11 +1,10 @@
-
 // imports
 const {Router} = require('express');
 const {getLogin,
         postLogin,
         getRegister,
         postRegister,
-        getLogout} = require('../controllers/user');
+        getLogout} = require('../controllers/users');
 
 
 // router

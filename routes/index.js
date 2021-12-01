@@ -1,8 +1,8 @@
 
 // imports
-const {Router} = require('express');
+const {Router } = require('express');
 const {getHome,
-        getOther} = require('../controllers/index');
+        getOther } = require('../controllers/index');
 
 
 // router

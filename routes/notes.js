@@ -1,42 +1,37 @@
-
 // imports
 const {Router} = require('express');
-const {getNotes,
-        getAddNote,
-        postAddNote,
-        getEditNote,
-        putEditNote,
-        deleteDeleteNote} = require('../controllers/notes');
+const {getTask,
+        addTask,
+        postAddTask,
+        editTask,
+        msgEditTask,
+        deleteTask} = require('../controllers/tasks');
 const auth = require('../helpers/auth');
-
-
 
 // router
 const router = Router();
 
-
 // get /notes
-router.get('/notes', auth, getNotes);
-
+router.get('/notes', auth, getTask);
 
 // get /addNote
-router.get('/addNote', auth, getAddNote);
+router.get('/addNote', auth, addTask);
 
 
 // post /addNote
-router.post('/addNote', auth, postAddNote);
+router.post('/addNote', auth, postAddTask);
 
 
 // get /editNote
-router.get('/editNote/:id', auth, getEditNote);
+router.get('/editNote/:id', auth, editTask);
 
 
 // put /editNote
-router.put('/editNote/:id', auth, putEditNote);
+router.put('/editNote/:id', auth, msgEditTask);
 
 
 // delete /deleteNote
-router.delete('/deleteNote/:id', auth, deleteDeleteNote);
+router.delete('/deleteNote/:id', auth, deleteTask);
 
 
 // exports
