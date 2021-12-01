@@ -1,7 +1,7 @@
 // imports
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const User = require('../models/User');
+const User = require('../models/usuarios');
 const bcryptjs = require('bcryptjs');
 
 // el programa revisa la contraseña y el correo ingresado
