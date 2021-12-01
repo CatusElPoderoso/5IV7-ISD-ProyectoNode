@@ -1,0 +1,11 @@
+
+    {{#if error}}
+        <div class="errors">
+            <p>{{error}}</p>
+        </div>
+    {{/if}}
+    {{#each errors}}
+        <div class="errors">
+            <p>{{text}}</p>
+        </div>
+    {{/each}}

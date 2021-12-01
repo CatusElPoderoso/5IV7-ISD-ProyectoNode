@@ -1,0 +1,15 @@
+
+    <!-- tasks -->
+    <div class="tasks">
+
+        {{#each notes}}
+            <div class="task">
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                <form action="/deleteNote/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <a href="/editNote/{{_id}}" class="btn">Editar</a>
+                    <button type="submit" class="btn">Borrar</button>
+                </form>
+            </div>
+        {{/each}}

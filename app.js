@@ -1,7 +1,9 @@
-// importa el servidor
+
+// imports
 require( 'dotenv' ).config();
 const Server = require( './models/server' );
 
-// carga y escucha el servidor
+
+// server
 const server = new Server();
 server.listen();

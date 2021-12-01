@@ -1,0 +1,31 @@
+
+    <!-- form -->
+    <section class="form">
+        <h2>Editar tarea</h2>
+        <div class="contenedor">
+            <form action="/editNote/{{note._id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div>
+                    <input type="text" placeholder="Nuevo titulo" value="{{note.title}}" name="title">
+                    <input type="text" placeholder="Nueva descripcion"  value="{{note.description}}" name="description">
+                </div>
+                <div>
+                    <button type="submit" class="submit">Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- indicator -->
+    <div class="indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- cta -->
+    <div class="cta">
+        <p>No quieres editar la nota . . . <br>Da click en el boton para regresar</p>
+        <a href="/notes"><button type="button">Regresar &#x27F6;</button></a>
+    </div>
